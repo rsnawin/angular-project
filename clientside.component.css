@@ -1,0 +1,9 @@
+h1{
+    font-size:80px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+table{
+    width: 40%;
+    margin-left: 35%;
+    border-color: black;
+}

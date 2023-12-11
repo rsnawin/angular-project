@@ -1,0 +1,53 @@
+
+    <title>Kitchen story</title>
+    <div>
+        <form [formGroup]="kitchen" align="center">
+            <br><br><br><br>
+            <div>
+                <h1>Kitchen Story :)</h1>
+                <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Eat Fresh</p>
+            </div><br><br>
+            <div align="center">
+                <div>
+                    <input list="bow" placeholder="search your product" aria-label="Search" formControlName="search" style="  border-radius: 25px;
+           
+            padding: 10px;
+            width: 200px;
+            text-align: center;">
+                    <datalist id="bow">
+                        <option value="fruits">
+                        <option value="vegetables">
+                        <option value="biscuits">
+                        <option value="milk">
+                    </datalist>&nbsp;&nbsp; <button class="btn btn-outline-success" (click)="search()" type="submit" style="font-size: small;">Search</button>
+                    <br><br>
+                </div>
+                <div> </div>
+            </div>
+        </form>
+        <br><br>
+    </div>
+    <table *ngIf="ischoice" class="table table-striped">
+        <thead>
+            <th> Items</th>
+            <th>Price</th>
+            <!--<th>quantity</th>-->
+            <th>choice</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hero of arr">
+                <td>{{hero.types}}</td>
+                <td>{{"₹"+ hero.price}}</td>
+                <!---<td>{{hero.quantity}}</td>-->
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="buy(hero.types,hero.price)"
+                        routerLink="/buyingitems">Buy</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+  <div class="container" style="text-align: right;">
+    <button type="button" class="btn btn-danger" routerLink="/adminside" title="Admin">Admin</button>
+</div>
+<marquee style="margin-top: 15%;">WELCOME TO NAWZONE ERA</marquee>

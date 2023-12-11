@@ -1,0 +1,40 @@
+<html>
+    <head>     
+    </head>
+    <br>
+    <h1 style="text-align: center;">Welcome To Admin Page</h1>
+    <body>
+      <div *ngIf="isnotchange">
+        <form  [formGroup]="adminform" align="center">
+          <br>
+          <div class="col-md-12">
+              <label for="username">Username   </label>&nbsp;&nbsp;
+              <input type="email" id="username"  formControlName="username" (oninput)="username($event)">
+          <br><br>
+              <label for="password">password   </label>&nbsp;&nbsp;
+              <input type="email" id="username"  formControlName="password"  (oninput)="password($event)">
+          </div>
+          <br>
+    <div class="form-group"><button type="button" class="btn btn-primary" (click)="check()">Login</button></div>
+    <br>
+    <span class="psw">Forgot <a style="color: blue;" (click)="changepassword()">password?</a></span>
+  </form>
+      </div>
+<div *ngIf="ischange" align="center">
+
+    <div id="alert"></div>
+    <br><br><br>
+  <div>
+    <label for="password">Password</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="password" id="password"  [(ngModel)]="type" />
+  </div><br>
+    <div>
+      <label for="password-verify">Retype password</label>&nbsp;
+      <input type="password" id="password-verify" [(ngModel)]="retype"/><br>
+    </div><br>
+    <span> <button type="submit" class="btn btn-primary" (click)="submitpass()">Reset password</button></span>&nbsp;
+
+ <button type="button" class="btn btn-primary" (click)="changepassword()">Go Back</button>
+</div>
+    </body>
+</html>

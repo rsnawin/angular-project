@@ -1,0 +1,74 @@
+<form><br><br><br><br>
+    <div *ngIf="ischeck" align="center">
+            <label for="Manager"  class="form-label">Available Food Items  </label>
+            <select name="Manager" id="Manager"(input)="secontypeevent($event)" aria-label="Disabled select example">
+                <option ></option>
+               <option *ngFor="let hero of avail_items" [value]="hero.items">{{hero.items}}</option>
+            </select>
+  </div>
+  
+    <div *ngIf="isthischeck" align="center">
+        <dialog open>
+       <h4>Invalid Username and Password!!!!!</h4>
+    </dialog>
+    </div>
+
+    <div   *ngIf="allowadd">
+        <div  class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="type" (click)="add()" class="btn btn-primary">add</button>&nbsp;
+        </div>
+        <br><br>
+        <table class="table table-success table-striped">
+         <thead>
+               
+                    <th >Items</th>
+                    <th>Price</th>
+                    <th>Action</th>
+         </thead>
+         
+          <tbody *ngIf="fr">
+                    <tr *ngFor="let m1 of fruits let i=index" >
+                        
+                        <td>{{m1.types}}</td>
+                        <td>{{m1.price}}</td>
+                        <td ><button type="type" value="m1.types" (click)="deletee(i)">delete</button></td>
+                    </tr>
+            </tbody> 
+            <tbody *ngIf="veg">
+                <tr  *ngFor="let m2 of vegetables let i=index" >
+                    <td>{{m2.types}}</td>
+                    <td>{{m2.price}}</td>
+                    <td><button type="type"  value="m2.types" (click)="deletee(i)">delete</button></td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="bis">
+                <tr  *ngFor="let m3 of biscuits let i=index" >
+                    <td>{{m3.types}}</td>
+                    <td>{{m3.price}}</td>
+                    <td><button type="type" value="m3.types" (click)="deletee(i)">delete</button></td>
+                </tr>
+        </tbody>
+        <tbody *ngIf="mil">
+            <tr  *ngFor="let m4 of milks let i=index" >
+                <td>{{m4.types}}</td>
+                <td>{{m4.price}}</td>
+                <td><button type="type" value="m4.types" (click)="deletee(i)">delete</button></td>
+            </tr>
+    </tbody>
+        </table>
+    </div>
+    <br><br><br>
+<div *ngIf="disadd" align="center">
+    <div>
+        <label for="iname">Item Name</label>&nbsp;&nbsp;&nbsp;
+       <input type="text" id="iname" [(ngModel)]="name">
+     </div><br><br>
+     <div>
+      <label for="iname">Item price</label>&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="text" id="iname" [(ngModel)]="price" >
+   </div><br><br>
+              <button type="button" (click)="submit()">SUBMIT</button>     
+</div>
+
+
+</form>
